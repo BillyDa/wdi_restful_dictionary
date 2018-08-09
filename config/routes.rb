@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   get '/show:id/' => 'entries#show'
 
+  get 'edit:id' => 'edit#show'
+
 end
