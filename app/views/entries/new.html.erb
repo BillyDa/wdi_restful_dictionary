@@ -1,1 +1,16 @@
 <h3>New Entry Here</h3>
+
+<p><%= link_to 'Words', entries_url %></p>
+
+<%= form_for @entry do |f| %>
+  <p><%= f.label :word %>
+  <%= f.text_field :word %></p>
+
+  <p><%= f.label :language %>
+  <%= f.text_field :language %></p>
+
+  <p><%= f.label :definition %>
+  <%= f.text_area :definition %></p>
+
+  <%= f.submit %>
+<% end %>

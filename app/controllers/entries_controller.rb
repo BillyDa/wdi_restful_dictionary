@@ -9,11 +9,21 @@ class EntriesController < ApplicationController
   end
 
   def new
-
+    @entry = Entry.new
   end
 
   def create
-    redirect_to entries_url
+    @entry = Entry.new
+    @entry.word = params[:entry][:word]
+    @entry.language = params[:entry][:language]
+    @entry.definition = params[:entry][:definition]
+
+    if @entry.save
+      redirect_to entries_url
+    end
+    # else
+    #   render :new
+    # end
   end
 
   def edit
